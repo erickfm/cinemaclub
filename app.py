@@ -1,5 +1,5 @@
 import streamlit as st
-from cinemaclub.cc import get_feed, get_user, rounded_img
+from cinemaclub.cc import get_feed, get_user#, rounded_img
 
 st.set_page_config(page_title="Letterboxd Feed")
 cola, colb = st.columns([1, 1])
