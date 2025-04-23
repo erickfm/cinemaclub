@@ -2,7 +2,7 @@ import streamlit as st
 from cinemaclub.cc import get_feed, get_user
 from cinemaclub.style import single_image, dual_image, feed_image
 
-st.set_page_config(page_title="CinemaClub")
+st.set_page_config(page_title="CinemaClub", page_icon='https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/film.png')
 query_params = st.query_params
 if query_params:
     with st.spinner('Loading...'):
