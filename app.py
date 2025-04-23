@@ -1,7 +1,9 @@
 import streamlit as st
 from cinemaclub.cc import get_feed, get_user, rounded_img
 
-st.set_page_config(page_title="Letterboxd Feed")
+import streamlit as st
+
+st.set_page_config(page_title="CinemaClub")
 cola, colb = st.columns([1, 9])
 colb.markdown(
     f"""<a target="_self" href="https://cinemaclub.streamlit.app"><img src="https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/cc.png" style="display:block;" width="50%" height="100%"></a>""",
