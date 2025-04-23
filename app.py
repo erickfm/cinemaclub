@@ -4,9 +4,6 @@ from cinemaclub.style import single_image, dual_image
 
 st.set_page_config(page_title="CinemaClub")
 query_params = st.query_params
-
-
-
 if query_params:
     with st.spinner('Loading...'):
         user = get_user(query_params['username'].lower())
@@ -23,7 +20,7 @@ if query_params:
             st.write(log_id, log.get("title"), log.get("film"))
             st.write(log.get("review"))
         else:
-            st.write(log_id, log["username"], log.get("film") or log.get("title"), log["event_type"])
+            st.write(log_id, log.get("title"))
         if idx == 20:  # limit preview to 10 lines
             break
 else:
