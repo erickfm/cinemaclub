@@ -14,7 +14,7 @@ if query_params:
     colb.markdown(
         f"""
         <a href="https://letterboxd.com/{user.username}" target="_blank">
-            <img src="{user.avatar['url']}" style="border-radius: 15px; width: 100%; max-width: 400px;">
+            <img src="{user.avatar['url']}" style="border-radius: 15px; width: 100%; max-width: 100px;">
         </a>
         """,
         unsafe_allow_html=True
