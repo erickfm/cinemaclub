@@ -3,7 +3,7 @@ from cinemaclub.cc import get_feed, get_user, rounded_img
 
 st.set_page_config(page_title="Letterboxd Feed")
 cola, colb = st.columns([1, 1])
-cola.markdown(
+colb.markdown(
     f"""<a target="_self" href="https://cinemaclub.streamlit.app"><img src="https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/cc.png" style="display:block;" width="50%" height="100%"></a>""",
     unsafe_allow_html=1)
 query_params = st.query_params
@@ -11,7 +11,7 @@ if query_params:
 
     with st.spinner('Loading...'):
         user = get_user(query_params['username'].lower())
-    colb.markdown(
+    cola.markdown(
         f"""
         <a href="https://letterboxd.com/{user.username}" target="_blank">
             <img src="{user.avatar['url']}" style="border-radius: 15px; width: 100%; max-width: 100px;">
