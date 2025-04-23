@@ -1,5 +1,5 @@
 import streamlit as st
-from cinemaclub.cc import get_feed, get_user, rounded_img
+from cinemaclub.cc import get_feed, get_user
 from cinemaclub.style import single_image, dual_image, feed_image
 
 st.set_page_config(page_title="CinemaClub")
@@ -19,7 +19,7 @@ if query_params:
             st.markdown(feed_image(feed_user, text, log.get("review")), unsafe_allow_html=True)
         else:
             st.markdown(feed_image(feed_user, log.get("title")), unsafe_allow_html=True)
-        if idx == 20:  # limit preview to 10 lines
+        if idx == 100:  # limit preview
             break
 else:
     st.markdown(single_image, unsafe_allow_html=True)

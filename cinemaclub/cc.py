@@ -28,19 +28,3 @@ def get_feed(username):
 
 def get_user(username):
     return user.User(username)
-
-
-def rounded_img(url, radius=1000):
-    """Fetches an image from a URL and returns it with rounded corners."""
-    response = requests.get(url)
-    img = Image.open(BytesIO(response.content)).convert("RGB")
-
-    # Create rounded corner mask
-    mask = Image.new("L", img.size, 0)
-    draw = ImageDraw.Draw(mask)
-    draw.rounded_rectangle([0, 0, img.size[0], img.size[1]], radius=radius, fill=255)
-
-    # Apply mask and return image with alpha
-    img = img.convert("RGBA")
-    img.putalpha(mask)
-    return img
