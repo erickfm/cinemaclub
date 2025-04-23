@@ -1,8 +1,13 @@
 import streamlit as st
 from cinemaclub.cc import get_feed, get_user
 from cinemaclub.style import single_image, dual_image, feed_image
+import streamlit.components.v1 as components
+
 
 st.set_page_config(page_title="CinemaClub", page_icon='https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/film.png')
+components.html("""
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/film.png">
+""", height=0)
 query_params = st.query_params
 if query_params:
     with st.spinner('Loading...'):
