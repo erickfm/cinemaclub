@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cinemaclub"
+version = "0.1.0"
+description = ""
+authors = ["Erick <efm.physics@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.44.1"
+letterboxdpy = {git = "https://github.com/nmcassa/letterboxdpy.git"}
+beautifulsoup4 = "^4.13.4"
+lxml = "^5.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
