@@ -1,15 +1,25 @@
 import streamlit as st
-from cinemaclub.cc import get_feed
+from cinemaclub.cc import get_feed, get_user, rounded_img
 
 st.set_page_config(page_title="Letterboxd Feed")
-cola, colb = st.columns([2, 9])
+cola, colb = st.columns([4, 1])
 cola.markdown(
-    f"""<a target="_self" href="https://cinemaclub.streamlit.app/"><img src="https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/cc.png" style="display:block;" width="100%" height="100%"></a>""",
+    f"""<a target="_self" href="https://cinemaclub.streamlit.app/"><img src="https://raw.githubusercontent.com/erickfm/cinemaclub/main/images/cc2.png" style="display:block;" width="100%" height="100%"></a>""",
     unsafe_allow_html=1)
-colb.markdown('# CineBot \nYour AI Film Critic 😈')
 query_params = st.query_params
 if query_params:
-    with st.spinner():
+
+    with st.spinner('Loading...'):
+        user = get_user(query_params['username'])
+    colb.markdown(
+        f"""
+        <a href="https://letterboxd.com/{user.username}" target="_blank">
+            <img src="{user.avatar['url']}" style="border-radius: 15px; width: 100%; max-width: 400px;">
+        </a>
+        """,
+        unsafe_allow_html=True
+    )
+    with st.spinner('Loading...'):
         feed = get_feed(query_params['username'])
     st.write(f"pulled {feed['total_logs']} logs")
     for idx, (log_id, log) in enumerate(feed["logs"].items()):
