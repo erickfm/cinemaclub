@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "cinemaclub"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "A personalized, visual feed of your friends’ Letterboxd reviews, likes, and activity."
 authors = ["Erick <efm.physics@gmail.com>"]
 readme = "README.md"
 
